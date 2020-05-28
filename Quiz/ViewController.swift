@@ -15,13 +15,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var answerLabel: UILabel!
     
     let questions: [String] = [
-        "what is 2x3?",
-        "what grade will I try to get in the Swift course?",
-        "is this a question?"
+        "What is 3x4?",
+        "What grade will I try to get in the Swift course?",
+        "Is this a question?"
     ]
     
     let answers: [String] = [
-        "6",
+        "12",
         "1.0",
         "Yes"
     ]
@@ -33,6 +33,20 @@ class ViewController: UIViewController {
         questionLabel.text = "No Question yet"
         answerLabel.text = "No Question --> no answer"
         // Do any additional setup after loading the view.
+    }
+    
+    func animateLabelTransitions () {
+        let animationClosure = { () -> Void in
+            self.questionLabel.alpha = 1
+        }
+        
+        UIView.animate(withDuration: 0.5, animations: animationClosure)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        questionLabel.alpha = 0
     }
 
     @IBAction func showNextQuestion(_ sender: Any) {
@@ -46,6 +60,8 @@ class ViewController: UIViewController {
         
         let question: String = questions[currentQuestionIndex]
         questionLabel.text = question
+        
+        animateLabelTransitions()
     }
     
     @IBAction func showAnswer(_ sender: Any) {
