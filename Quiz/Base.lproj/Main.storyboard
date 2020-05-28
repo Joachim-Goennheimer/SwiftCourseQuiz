@@ -53,6 +53,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="HYr-Wt-5ND" firstAttribute="centerX" secondItem="4ja-XA-uiz" secondAttribute="centerX" id="UFP-2u-48h"/>
+                                    <constraint firstItem="nQh-ja-Efd" firstAttribute="centerX" secondItem="4ja-XA-uiz" secondAttribute="centerX" id="fuG-Db-fpT"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -68,7 +69,9 @@
                     <connections>
                         <outlet property="answerLabel" destination="Z8z-G7-tRX" id="ZD6-hP-3eU"/>
                         <outlet property="currentQuestionLabel" destination="nQh-ja-Efd" id="f8f-7b-zSt"/>
+                        <outlet property="currentQuestionLabelCenterXConstraint" destination="fuG-Db-fpT" id="zMl-kA-jzr"/>
                         <outlet property="nextQuestionLabel" destination="HYr-Wt-5ND" id="GQ7-52-dEL"/>
+                        <outlet property="nextQuestionLabelCenterXConstraint" destination="UFP-2u-48h" id="PRK-cl-KxV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
