@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var questionLabel: UILabel!
+//    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet var currentQuestionLabel: UILabel!
+    @IBOutlet var nextQuestionLabel: UILabel!
         
     @IBOutlet weak var answerLabel: UILabel!
     
@@ -30,7 +32,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = "No Question yet"
+        nextQuestionLabel.text = "No Question yet"
         answerLabel.text = "No Question --> no answer"
         // Do any additional setup after loading the view.
     }
@@ -41,14 +43,16 @@ class ViewController: UIViewController {
 //        }
         
         UIView.animate(withDuration: 0.5, animations: {
-            self.questionLabel.alpha = 1
+//            self.questionLabel.alpha = 1
+            self.currentQuestionLabel.alpha = 0
+            self.nextQuestionLabel.alpha = 1
         })
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        questionLabel.alpha = 0
+        nextQuestionLabel.alpha = 0
     }
 
     @IBAction func showNextQuestion(_ sender: Any) {
@@ -61,7 +65,7 @@ class ViewController: UIViewController {
         }
         
         let question: String = questions[currentQuestionIndex]
-        questionLabel.text = question
+        nextQuestionLabel.text = question
         
         animateLabelTransitions()
     }

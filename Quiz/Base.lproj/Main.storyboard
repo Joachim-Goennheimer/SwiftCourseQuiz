@@ -16,35 +16,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="4ja-XA-uiz">
-                                <rect key="frame" x="0.0" y="345" width="414" height="206"/>
+                                <rect key="frame" x="0.0" y="317.5" width="414" height="261.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQh-ja-Efd">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Question Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQh-ja-Efd" userLabel="Question Label">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Question Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYr-Wt-5ND">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTj-s1-VDI">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="30"/>
+                                        <rect key="frame" x="0.0" y="111" width="414" height="30"/>
                                         <state key="normal" title="Question Button"/>
                                         <connections>
                                             <action selector="showNextQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QtI-ba-y2r"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8z-G7-tRX" userLabel="Answer Label">
-                                        <rect key="frame" x="0.0" y="120.5" width="414" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="176" width="414" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCl-ZR-8Sb">
-                                        <rect key="frame" x="0.0" y="176" width="414" height="30"/>
+                                        <rect key="frame" x="0.0" y="231.5" width="414" height="30"/>
                                         <state key="normal" title="Answer Button"/>
                                         <connections>
                                             <action selector="showAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Spw-6K-C62"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="HYr-Wt-5ND" firstAttribute="centerX" secondItem="4ja-XA-uiz" secondAttribute="centerX" id="UFP-2u-48h"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -58,7 +67,8 @@
                     </view>
                     <connections>
                         <outlet property="answerLabel" destination="Z8z-G7-tRX" id="ZD6-hP-3eU"/>
-                        <outlet property="questionLabel" destination="nQh-ja-Efd" id="La3-OR-S84"/>
+                        <outlet property="currentQuestionLabel" destination="nQh-ja-Efd" id="f8f-7b-zSt"/>
+                        <outlet property="nextQuestionLabel" destination="HYr-Wt-5ND" id="GQ7-52-dEL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
